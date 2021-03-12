@@ -1,7 +1,7 @@
 <template>
   <div class="footer">
-    <button>问卷广场</button>
-    <button>我的问卷</button>
+    <button><router-link to="/body/plaza">问卷广场</router-link></button>
+    <button><router-link to="/body/my">我的问卷</router-link></button>
   </div>
 </template>
 <script>
@@ -16,9 +16,13 @@ export default {}
      align-items: center;
 }
 .footer button{
+    width: 50%;
     border: 0;
     outline: none;
     background: transparent;
     height: 100%;
+}
+.footer button:nth-child(1){
+  border-right: 2px solid #fff;
 }
 </style>

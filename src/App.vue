@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-      <Header></Header>
-      <Body></Body>
-      <Footer></Footer>
+    <Header></Header>
+    <Body></Body>
+    <Footer></Footer>
   </div>
 </template>
 
@@ -21,15 +21,21 @@ export default {
 </script>
 
 <style>
-*{
+* {
   box-sizing: border-box;
 }
-button{
+button {
   outline: none;
 }
-body{
+body,
+ul,
+li,
+button{
   margin: 0;
   padding: 0;
+}
+li{
+  list-style: none;
 }
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -42,8 +48,8 @@ body{
   width: 50%;
   background: rgb(202, 182, 182);
 }
-@media screen and (max-width:540px) {
-  #app{
+@media screen and (max-width: 540px) {
+  #app {
     width: 100%;
   }
 }
