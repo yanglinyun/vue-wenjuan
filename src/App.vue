@@ -1,56 +1,51 @@
 <template>
-  <div id="app">
+  <div id='app'>
     <Header></Header>
-    <Body></Body>
+    <Scroll class='body' :pulldown='pulldown' @pulldown='loadData' ref='body'>
+      <keep-alive>
+        <router-view></router-view>
+      </keep-alive>
+      <button class='add' :style="{ display: headerName!=='login'?'block':'none'}">＋</button>
+    </Scroll>
     <Footer></Footer>
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import Header from './components/header/header'
-import Body from './components/body/body'
+import Scroll from './components/scroll/scroll'
 import Footer from './components/footer/footer'
 export default {
   name: 'App',
+  data () {
+    return {
+      isaddshow: true,
+      data: [],
+      pulldown: true
+    }
+  },
+  created () {
+    this.loadData()
+  },
+  updated () {
+    this.$refs.body.refresh()
+  },
+  computed: {
+  // 使用对象展开运算符将 getter 混入 computed 对象中
+    ...mapGetters('store', ['headerName'])
+  },
+  methods: {
+    loadData () {
+      console.log('加载')
+    }
+  },
   components: {
     Header,
-    Body,
+    Scroll,
     Footer
   }
 }
 </script>
-
 <style>
-* {
-  box-sizing: border-box;
-}
-button {
-  outline: none;
-}
-body,
-ul,
-li,
-button{
-  margin: 0;
-  padding: 0;
-}
-li{
-  list-style: none;
-}
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin: 0 auto;
-  height: 100vh;
-  width: 50%;
-  background: rgb(202, 182, 182);
-}
-@media screen and (max-width: 540px) {
-  #app {
-    width: 100%;
-  }
-}
 </style>

@@ -1,14 +1,14 @@
 <template>
   <div class="header">
-    {{ headerName }}
+    {{headerName}}
   </div>
 </template>
 <script>
+import { mapGetters } from 'vuex'
 export default {
   computed: {
-    headerName () {
-      return this.$store.state.headerName
-    }
+  // 使用对象展开运算符将 getter 混入 computed 对象中
+    ...mapGetters('store', ['headerName'])
   }
 }
 </script>

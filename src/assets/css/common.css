@@ -1,0 +1,55 @@
+* {
+    box-sizing: border-box;
+  }
+  button {
+    outline: none;
+  }
+  body,
+  ul,
+  li,
+  button {
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    list-style: none;
+  }
+  .body {
+    overflow: hidden;
+    height: 87vh;
+    background: snow;
+    position: relative;
+  }
+  a{
+    text-decoration: none;
+  }
+  .add {
+    font-size: 2em;
+    background: skyblue;
+    color: #000;
+    position: absolute;
+    border: 0;
+    text-align: center;
+    line-height: 100%;
+    bottom: 5%;
+    right: 2%;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+  }
+  #app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    margin: 0 auto;
+    height: 100vh;
+    width: 50%;
+    background: rgb(202, 182, 182);
+  }
+  @media screen and (max-width: 540px) {
+    #app {
+      width: 100%;
+    }
+  }

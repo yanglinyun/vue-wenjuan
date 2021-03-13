@@ -1,7 +1,7 @@
 <template>
   <div class="footer">
-    <button><router-link to="/body/plaza">问卷广场</router-link></button>
-    <button><router-link to="/body/my">我的问卷</router-link></button>
+    <button><router-link to="/plaza">问卷广场</router-link></button>
+    <button><router-link to="/my">我的问卷</router-link></button>
   </div>
 </template>
 <script>

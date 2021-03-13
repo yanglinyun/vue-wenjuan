@@ -1,19 +1,27 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+const state = {
+  headerName: 'test'
+}
 
-Vue.use(Vuex)
+const getters = {
+  headerName: state => state.headerName
+}
 
-const store = new Vuex.Store({
-  state: {
-    headerName: ''
-  },
-  mutations: {
-    changePage (state, name) {
-      state.couheaderNament = name
-    }
+const mutations = {
+  'SET_NAME' (state, payload) {
+    state.headerName = payload
   }
-})
+}
+
+const actions = {
+  setName ({commit}, payload) {
+    commit('SET_NAME', payload)
+  }
+}
 
 export default {
-  store
+  namespaced: true,
+  state,
+  getters,
+  mutations,
+  actions
 }

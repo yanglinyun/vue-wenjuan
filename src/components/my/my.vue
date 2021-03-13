@@ -1,70 +1,74 @@
 <template>
   <ul class="my">
-      my
     <li v-for="(item, index) in wj" :key="index">
       {{ item.title }}
     </li>
   </ul>
 </template>
 <script>
+import { mapActions } from 'vuex'
 export default {
   data () {
     return {
-      page: 'plaza',
+      page: 'my',
       wj: [
-        { id: 1, title: '标题', intro: '简介' },
-        { id: 1, title: '标题', intro: '简介' },
-        { id: 1, title: '标题', intro: '简介' },
-        { id: 1, title: '标题', intro: '简介' },
-        { id: 1, title: '标题', intro: '简介' },
-        { id: 1, title: '标题', intro: '简介' },
-        { id: 1, title: '标题', intro: '简介' },
-        { id: 1, title: '标题', intro: '简介' },
-        { id: 1, title: '标题', intro: '简介' },
-        { id: 1, title: '标题', intro: '简介' },
-        { id: 1, title: '标题', intro: '简介' },
-        { id: 1, title: '标题', intro: '简介' },
-        { id: 1, title: '标题', intro: '简介' },
-        { id: 1, title: '标题', intro: '简介' },
-        { id: 1, title: '标题', intro: '简介' },
-        { id: 1, title: '标题', intro: '简介' },
-        { id: 1, title: '标题', intro: '简介' },
-        { id: 1, title: '标题', intro: '简介' },
-        { id: 1, title: '标题', intro: '简介' },
-        { id: 1, title: '标题', intro: '简介' },
-        { id: 1, title: '标题', intro: '简介' },
-        { id: 1, title: '标题', intro: '简介' },
-        { id: 1, title: '标题', intro: '简介' },
-        { id: 1, title: '标题', intro: '简介' },
-        { id: 1, title: '标题', intro: '简介' },
-        { id: 1, title: '标题', intro: '简介' },
-        { id: 1, title: '标题', intro: '简介' },
-        { id: 1, title: '标题', intro: '简介' },
-        { id: 1, title: '标题', intro: '简介' },
-        { id: 1, title: '标题', intro: '简介' },
-        { id: 1, title: '标题', intro: '简介' },
-        { id: 1, title: '标题', intro: '简介' },
-        { id: 1, title: '标题', intro: '简介' },
-        { id: 1, title: '标题', intro: '简介' },
-        { id: 1, title: '标题', intro: '简介' },
-        { id: 1, title: '标题', intro: '简介' },
-        { id: 1, title: '标题', intro: '简介' },
-        { id: 1, title: '标题', intro: '简介' },
-        { id: 1, title: '标题', intro: '简介' },
-        { id: 1, title: '标题', intro: '简介' },
-        { id: 1, title: '标题', intro: '简介' },
-        { id: 1, title: '标题', intro: '简介' },
-        { id: 1, title: '标题', intro: '简介' },
-        { id: 1, title: '标题', intro: '简介' },
-        { id: 1, title: '标题', intro: '简介' },
-        { id: 1, title: '标题', intro: '简介' },
-        { id: 1, title: '标题', intro: '简介' },
-        { id: 1, title: '标题', intro: '简介' }
+        { id: 1, title: 'my', intro: '简介' },
+        { id: 1, title: 'my', intro: '简介' },
+        { id: 1, title: 'my', intro: '简介' },
+        { id: 1, title: 'my', intro: '简介' },
+        { id: 1, title: 'my', intro: '简介' },
+        { id: 1, title: 'my', intro: '简介' },
+        { id: 1, title: 'my', intro: '简介' },
+        { id: 1, title: 'my', intro: '简介' },
+        { id: 1, title: 'my', intro: '简介' },
+        { id: 1, title: 'my', intro: '简介' },
+        { id: 1, title: 'my', intro: '简介' },
+        { id: 1, title: 'my', intro: '简介' },
+        { id: 1, title: 'my', intro: '简介' },
+        { id: 1, title: 'my', intro: '简介' },
+        { id: 1, title: 'my', intro: '简介' },
+        { id: 1, title: 'my', intro: '简介' },
+        { id: 1, title: 'my', intro: '简介' },
+        { id: 1, title: 'my', intro: '简介' },
+        { id: 1, title: 'my', intro: '简介' },
+        { id: 1, title: 'my', intro: '简介' },
+        { id: 1, title: 'my', intro: '简介' },
+        { id: 1, title: 'my', intro: '简介' },
+        { id: 1, title: 'my', intro: '简介' },
+        { id: 1, title: 'my', intro: '简介' },
+        { id: 1, title: 'my', intro: '简介' },
+        { id: 1, title: 'my', intro: '简介' },
+        { id: 1, title: 'my', intro: '简介' },
+        { id: 1, title: 'my', intro: '简介' },
+        { id: 1, title: 'my', intro: '简介' },
+        { id: 1, title: 'my', intro: '简介' },
+        { id: 1, title: 'my', intro: '简介' },
+        { id: 1, title: 'my', intro: '简介' },
+        { id: 1, title: 'my', intro: '简介' },
+        { id: 1, title: 'my', intro: '简介' },
+        { id: 1, title: 'my', intro: '简介' },
+        { id: 1, title: 'my', intro: '简介' },
+        { id: 1, title: 'my', intro: '简介' },
+        { id: 1, title: 'my', intro: '简介' },
+        { id: 1, title: 'my', intro: '简介' },
+        { id: 1, title: 'my', intro: '简介' },
+        { id: 1, title: 'my', intro: '简介' },
+        { id: 1, title: 'my', intro: '简介' },
+        { id: 1, title: 'my', intro: '简介' },
+        { id: 1, title: 'my', intro: '简介' },
+        { id: 1, title: 'my', intro: '简介' },
+        { id: 1, title: 'my', intro: '简介' },
+        { id: 1, title: 'my', intro: '简介' },
+        { id: 1, title: 'my', intro: '简介' }
       ]
     }
   },
-  updated () {
-    this.$store.commit('changePage'.this.data.page)
+  mounted: function () {
+    console.log('update')
+    this.setName(this.page)
+  },
+  methods: {
+    ...mapActions('store', ['setName'])
   }
 }
 </script>
