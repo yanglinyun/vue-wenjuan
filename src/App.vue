@@ -3,9 +3,9 @@
     <Header></Header>
     <Scroll class='body' :pulldown='pulldown' @pulldown='loadData' ref='body'>
       <keep-alive>
-        <router-view></router-view>
+        <router-view @refresh="refresh"></router-view>
       </keep-alive>
-      <button class='add' :style="{ display: headerName!=='login'?'block':'none'}">＋</button>
+      <button class='add' @click="add" :style="{ display: (headerName!=='login' && headerName!=='wenjuan')?'block':'none'}">＋</button>
     </Scroll>
     <Footer></Footer>
   </div>
@@ -36,6 +36,14 @@ export default {
     ...mapGetters('store', ['headerName'])
   },
   methods: {
+    refresh (height) {
+      this.$refs.body.refresh()
+      console.log(height)
+      // this.$refs.body.scrollTo(0, height, 0)
+    },
+    add () {
+      this.$router.push({name: 'add'})
+    },
     loadData () {
       console.log('加载')
     }
